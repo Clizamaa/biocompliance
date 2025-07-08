@@ -125,7 +125,7 @@ export default function LandingPage() {
                   <CarouselContent>
                     <CarouselItem>
                       <Image
-                        src="/seguridad-salud.avif"
+                        src="/seguridad-salud.png"
                         alt="Equipo de asesoría profesional 1"
                         width={500}
                         height={600}
@@ -152,7 +152,7 @@ export default function LandingPage() {
                     </CarouselItem>
                     <CarouselItem>
                       <Image
-                        src="/compliance.jpg"
+                        src="/compliance.png"
                         alt="Equipo de asesoría profesional 4"
                         width={500}
                         height={600}
@@ -369,7 +369,7 @@ export default function LandingPage() {
 
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0 h-12 w-12 rounded-full bg-robinEggBlue-300 flex items-center justify-center">
-                    <Image src="/whatsapp.svg.webp" alt="WhatsApp Icon" width={28} height={28} className="text-white" />
+                    <Image src="/whatsapp.png" alt="WhatsApp Icon" width={28} height={28} className="text-white" />
                   </div>
                   <div>
                     <h3 className="text-lg font-medium text-black">Whatsapp</h3>

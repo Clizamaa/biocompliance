@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bio Compliance - Landing Page
 
-## Getting Started
+![Bio Compliance Logo](./public/logo.png)
 
-First, run the development server:
+Este es el repositorio oficial de la landing page de **Bio Compliance**, una consultora dedicada a ofrecer asesoría experta para el crecimiento y cumplimiento normativo de negocios. La página está diseñada para ser moderna, atractiva y completamente responsive.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Características Principales
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Diseño Moderno y Atractivo:** Una interfaz de usuario limpia y profesional que refleja la calidad de los servicios ofrecidos.
+- **Totalmente Responsive:** Perfecta visualización en cualquier dispositivo, desde ordenadores de escritorio hasta teléfonos móviles.
+- **Secciones Clave:**
+  - **Inicio:** Una bienvenida con un carrusel de imágenes y un llamado a la acción claro.
+  - **Nosotros:** Presentación del equipo y la misión de la empresa.
+  - **Servicios:** Descripción detallada de los servicios ofrecidos, como asesoría personalizada y cumplimiento normativo.
+  - **Testimonios:** Opiniones de clientes satisfechos para generar confianza.
+  - **Contacto:** Un formulario de contacto funcional y datos de contacto directo.
+- **Animaciones Sutiles:** Efectos de `FadeIn` para una experiencia de usuario más fluida y agradable.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🛠️ Tecnologías Utilizadas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **[Next.js](https://nextjs.org/):** Framework de React para construir aplicaciones web rápidas y escalables.
+- **[React](https://react.dev/):** Biblioteca de JavaScript para construir interfaces de usuario.
+- **[Tailwind CSS](https://tailwindcss.com/):** Framework de CSS para un diseño rápido y personalizable.
+- **[Shadcn/ui](https://ui.shadcn.com/):** Colección de componentes de UI reutilizables.
+- **[Lucide React](https://lucide.dev/):** Biblioteca de iconos SVG limpios y consistentes.
+- **[Embla Carousel](https://www.embla-carousel.com/):** Carrusel ligero y extensible para React.
 
-## Learn More
+## 🚀 Instalación y Uso
 
-To learn more about Next.js, take a look at the following resources:
+Sigue estos pasos para levantar el proyecto en tu entorno local:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1.  **Clona el repositorio:**
+    ```bash
+    git clone https://github.com/tu-usuario/biocompliance.git
+    cd biocompliance
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2.  **Instala las dependencias:**
+    ```bash
+    npm install
+    ```
 
-## Deploy on Vercel
+3.  **Ejecuta el servidor de desarrollo:**
+    ```bash
+    npm run dev
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4.  **Abre tu navegador:**
+    Visita [http://localhost:3000](http://localhost:3000) para ver la aplicación en funcionamiento.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📞 Contacto
+
+Si tienes alguna pregunta o quieres saber más sobre nuestros servicios, no dudes en contactarnos:
+
+- **Email:** [contacto@biocompliance.cl](mailto:contacto@biocompliance.cl)
+- **Teléfono:** +56 9 5969 7543
+

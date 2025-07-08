@@ -1,20 +1,30 @@
 "use client";
 
-import * as React from "react";
+import React, { useState, useEffect, useRef } from 'react';
 import Autoplay from "embla-carousel-autoplay";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import { ArrowRight, Menu, X, Users, TrendingUp, Shield, Award, Phone, Mail, MapPin, Lightbulb } from "lucide-react";
+import { ArrowRight, Menu, X, Users, Shield, Award, Phone, Mail, Lightbulb, Landmark } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/ui/fade-in";
 
+
+
 export default function LandingPage() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const plugin = React.useRef(
+  const [Blendi, setBlendi] = useState(() => () => null);
+
+  useEffect(() => {
+    if (window.Blendy) {
+      const { Blendi: BlendiComponent } = window.Blendy.createBlendy();
+      setBlendi(() => BlendiComponent);
+    }
+  }, []);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const plugin = useRef(
     Autoplay({ delay: 3000, stopOnInteraction: false })
   );
   return (
@@ -94,10 +104,12 @@ export default function LandingPage() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="bg-robinEggBlue-300 hover:bg-robinEggBlue-400 transition-colors">
-                    Comenzar Ahora
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
+                  <Link href="#contacto">
+                    <Button size="lg" className="bg-robinEggBlue-300 hover:bg-robinEggBlue-400 transition-colors">
+                      Contactanos
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                 </div>
 
                 <div className="flex items-center space-x-8 pt-4">
@@ -246,87 +258,129 @@ export default function LandingPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <FadeIn>
-              <Card className="border border-slateGray-200 shadow-lg hover:shadow-xl transition-shadow hover:border-robinEggBlue-200">
-                <CardHeader className="pb-2">
-                  <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
-                    <Users className="h-6 w-6 text-blue-600" />
-                  </div>
-                  <CardTitle className="text-xl text-charcoal-800">Asesoría Personalizada</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-slateGray-600">Soluciones hechas a medida para las necesidades específicas de tu negocio.</p>
-                </CardContent>
-              </Card>
+              <Blendi
+                blendyProps={{
+                  variant: 'glow',
+                  palette: ['#3C6282', '#56BAC1', '#E3FCFE'],
+                }}
+              >
+                <Card className="border border-slateGray-200 shadow-lg">
+                  <CardHeader className="pb-2">
+                    <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                      <Users className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <CardTitle className="text-xl text-charcoal-800">Asesoría Personalizada</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-slateGray-600">Soluciones hechas a medida para las necesidades específicas de tu negocio.</p>
+                  </CardContent>
+                </Card>
+              </Blendi>
             </FadeIn>
 
             <FadeIn>
-              <Card className="border border-slateGray-200 shadow-lg hover:shadow-xl transition-shadow hover:border-green-200">
-                <CardHeader className="pb-2">
-                  <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
-                    <TrendingUp className="h-6 w-6 text-green-600" />
-                  </div>
-                  <CardTitle className="text-xl text-charcoal-800">Crecimiento Sostenible</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-slateGray-600">Estrategias para un crecimiento rentable y sostenible en el tiempo.</p>
-                </CardContent>
-              </Card>
+              <Blendi
+                blendyProps={{
+                  variant: 'glow',
+                  palette: ['#56BAC1', '#A4B4BF', '#FFFFFF'],
+                }}
+              >
+                <Card className="border border-slateGray-200 shadow-lg">
+                  <CardHeader className="pb-2">
+                    <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                      <Landmark className="h-6 w-6 text-green-600" />
+                    </div>
+                    <CardTitle className="text-xl text-charcoal-800">Autorizaciones Sanitarias Seremi de Salud</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-slateGray-600">Obtención y renovación de autorizaciones sanitarias Seremi de Salud.</p>
+                  </CardContent>
+                </Card>
+              </Blendi>
             </FadeIn>
 
             <FadeIn>
-              <Card className="border border-slateGray-200 shadow-lg hover:shadow-xl transition-shadow hover:border-purple-200">
-                <CardHeader className="pb-2">
-                  <div className="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
-                    <Shield className="h-6 w-6 text-purple-600" />
-                  </div>
-                  <CardTitle className="text-xl text-charcoal-800">Cumplimiento Normativo</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-slateGray-600">Garantizamos que tu negocio cumpla con todas las regulaciones aplicables.</p>
-                </CardContent>
-              </Card>
+              <Blendi
+                blendyProps={{
+                  variant: 'glow',
+                  palette: ['#123565', '#3C6282', '#A4B4BF'],
+                }}
+              >
+                <Card className="border border-slateGray-200 shadow-lg">
+                  <CardHeader className="pb-2">
+                    <div className="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
+                      <Shield className="h-6 w-6 text-purple-600" />
+                    </div>
+                    <CardTitle className="text-xl text-charcoal-800">Cumplimiento Normativo</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-slateGray-600">Garantizamos que tu negocio cumpla con todas las regulaciones aplicables.</p>
+                  </CardContent>
+                </Card>
+              </Blendi>
             </FadeIn>
 
             <FadeIn>
-              <Card className="border border-slateGray-200 shadow-lg hover:shadow-xl transition-shadow hover:border-orange-200">
-                <CardHeader className="pb-2">
-                  <div className="h-12 w-12 rounded-full bg-orange-100 flex items-center justify-center mb-4">
-                    <Lightbulb className="h-6 w-6 text-orange-600" />
-                  </div>
-                  <CardTitle className="text-xl text-charcoal-800">Innovación y Tecnología</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-slateGray-600">Implementamos soluciones tecnológicas para modernizar tu negocio.</p>
-                </CardContent>
-              </Card>
+              <Blendi
+                blendyProps={{
+                  variant: 'glow',
+                  palette: ['#183F51', '#3C6282', '#627A82'],
+                }}
+              >
+                <Card className="border border-slateGray-200 shadow-lg">
+                  <CardHeader className="pb-2">
+                    <div className="h-12 w-12 rounded-full bg-orange-100 flex items-center justify-center mb-4">
+                      <Lightbulb className="h-6 w-6 text-orange-600" />
+                    </div>
+                    <CardTitle className="text-xl text-charcoal-800">Confeccionamos tu RIOHS </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-slateGray-600">Confeccionamos tu Reglamento Interno de Higiene y Seguridad en 24hrs.</p>
+                  </CardContent>
+                </Card>
+              </Blendi>
             </FadeIn>
 
             <FadeIn>
-              <Card className="border border-slateGray-200 shadow-lg hover:shadow-xl transition-shadow hover:border-teal-200">
-                <CardHeader className="pb-2">
-                  <div className="h-12 w-12 rounded-full bg-teal-100 flex items-center justify-center mb-4">
-                    <Shield className="h-6 w-6 text-teal-600" />
-                  </div>
-                  <CardTitle className="text-xl text-charcoal-800">Gestión de Riesgos</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-slateGray-600">Identificamos y mitigamos riesgos para proteger tu negocio.</p>
-                </CardContent>
-              </Card>
+              <Blendi
+                blendyProps={{
+                  variant: 'glow',
+                  palette: ['#04C6CD', '#56BAC1', '#A4B4BF'],
+                }}
+              >
+                <Card className="border border-slateGray-200 shadow-lg">
+                  <CardHeader className="pb-2">
+                    <div className="h-12 w-12 rounded-full bg-teal-100 flex items-center justify-center mb-4">
+                      <Shield className="h-6 w-6 text-teal-600" />
+                    </div>
+                    <CardTitle className="text-xl text-charcoal-800">Gestión de Riesgos</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-slateGray-600">Identificamos y mitigamos riesgos para proteger tu negocio.</p>
+                  </CardContent>
+                </Card>
+              </Blendi>
             </FadeIn>
 
             <FadeIn>
-              <Card className="border border-slateGray-200 shadow-lg hover:shadow-xl transition-shadow hover:border-yellow-200">
-                <CardHeader className="pb-2">
-                  <div className="h-12 w-12 rounded-full bg-yellow-100 flex items-center justify-center mb-4">
-                    <Award className="h-6 w-6 text-yellow-600" />
-                  </div>
-                  <CardTitle className="text-xl text-charcoal-800">Consultoría Estratégica</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-slateGray-600">Planes estratégicos personalizados para alcanzar tus objetivos.</p>
-                </CardContent>
-              </Card>
+              <Blendi
+                blendyProps={{
+                  variant: 'glow',
+                  palette: ['#123565', '#183F51', '#3C6282'],
+                }}
+              >
+                <Card className="border border-slateGray-200 shadow-lg">
+                  <CardHeader className="pb-2">
+                    <div className="h-12 w-12 rounded-full bg-yellow-100 flex items-center justify-center mb-4">
+                      <Award className="h-6 w-6 text-yellow-600" />
+                    </div>
+                    <CardTitle className="text-xl text-charcoal-800">Consultoría Estratégica</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-slateGray-600">Planes estratégicos personalizados para alcanzar tus objetivos.</p>
+                  </CardContent>
+                </Card>
+              </Blendi>
             </FadeIn>
           </div>
         </div>

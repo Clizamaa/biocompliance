@@ -252,17 +252,19 @@ export default function LandingPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <FadeIn>
-                <Card className="border border-slateGray-200 shadow-lg h-full">
-                  <CardHeader className="pb-2">
-                    <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
-                      <Users className="h-6 w-6 text-blue-600" />
-                    </div>
-                    <CardTitle className="text-xl text-charcoal-800">Ley Karin</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-slateGray-600">lorem ipsun </p>
-                  </CardContent>
-                </Card>
+                <Link href="/servicios/ley-karin">
+                  <Card className="border border-slateGray-200 shadow-lg h-full cursor-pointer hover:border-robinEggBlue-300 hover:shadow-xl transition-all duration-300">
+                    <CardHeader className="pb-2">
+                      <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                        <Users className="h-6 w-6 text-blue-600" />
+                      </div>
+                      <CardTitle className="text-xl text-charcoal-800">Ley Karin</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-slateGray-600">Asesoría para la implementación de la Ley Karin, enfocada en prevenir, investigar y sancionar el acoso laboral, sexual y la violencia en el trabajo.</p>
+                    </CardContent>
+                  </Card>
+                </Link>
             </FadeIn>
 
             <FadeIn>

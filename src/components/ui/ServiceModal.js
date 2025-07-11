@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { X } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -11,24 +12,33 @@ const ServiceModal = ({ isOpen, onClose }) => {
     {
       title: 'AGUA',
       image: '/servicios/agua.svg',
+      path: '/servicios/seremi/agua',
     },
     {
       title: 'AIRE',
       image: '/servicios/aire.svg',
+      path: '/servicios/seremi/aire',
     },
     {
       title: 'ALIMENTO',
       image: '/servicios/alimento.svg',
+      path: '/servicios/seremi/alimento',
     },
     {
       title: 'ASBESTO',
       image: '/servicios/asbesto.svg',
+      path: '/servicios/seremi/asbesto',
     },
     {
       title: 'CALDERAS Y AUTOCLAVES',
       image: '/servicios/calderas.svg',
+      path: '/servicios/seremi/calderas-y-autoclaves',
     },
-    { title: 'DEA', image: '/servicios/dea.png' },
+    {
+      title: 'DEA',
+      image: '/servicios/dea.png',
+      path: '/servicios/seremi/dea',
+    },
     {
       title: (
         <span style={{ fontSize: '0.75rem' }}>
@@ -36,20 +46,57 @@ const ServiceModal = ({ isOpen, onClose }) => {
         </span>
       ),
       image: '/servicios/edsalud.svg',
+      path: '/servicios/seremi/establecimientos-de-salud',
     },
-    { title: 'EMPRESA APLICADORA', image: '/servicios/empresaaplicadora.svg' },
-    { title: 'INFORME SANITARIO', image: '/servicios/informesan.svg' },
-    { title: 'LOCALES PUBLICOS', image: '/servicios/localespublicos.svg' },
-    { title: 'LODOS', image: '/servicios/lodos.svg' },
-    { title: 'RADIACION', image: '/servicios/radiacion.svg' },
-    { title: 'RESIDUOS ESPECIALES', image: '/servicios/resespeciales.svg' },
-    { title: 'RESIDUOS NO PELIGROSOS', image: '/servicios/resnopeligrosos.svg' },
-    { title: 'RESIDUOS PELIGROSOS', image: '/servicios/respeligrosos.svg' },
-    { title: (
-      <span style={{ fontSize: '0.75rem' }}>
-        CALIFICACIÓN INDUSTRIAL
-      </span>
-    ), image: '/servicios/calificacion.svg' }
+    {
+      title: 'EMPRESA APLICADORA',
+      image: '/servicios/empresaaplicadora.svg',
+      path: '/servicios/seremi/empresa-aplicadora',
+    },
+    {
+      title: 'INFORME SANITARIO',
+      image: '/servicios/informesan.svg',
+      path: '/servicios/seremi/informe-sanitario',
+    },
+    {
+      title: 'LOCALES PUBLICOS',
+      image: '/servicios/localespublicos.svg',
+      path: '/servicios/seremi/locales-publicos',
+    },
+    {
+      title: 'LODOS',
+      image: '/servicios/lodos.svg',
+      path: '/servicios/seremi/lodos',
+    },
+{
+      title: 'RADIACION',
+      image: '/servicios/radiacion.svg',
+      path: '/servicios/seremi/radiacion',
+    },
+    {
+      title: 'RESIDUOS ESPECIALES',
+      image: '/servicios/resespeciales.svg',
+      path: '/servicios/seremi/residuos-especiales',
+    },
+    {
+      title: 'RESIDUOS NO PELIGROSOS',
+      image: '/servicios/resnopeligrosos.svg',
+      path: '/servicios/seremi/residuos-no-peligrosos',
+    },
+    {
+      title: 'RESIDUOS PELIGROSOS',
+      image: '/servicios/respeligrosos.svg',
+      path: '/servicios/seremi/residuos-peligrosos',
+    },
+    {
+      title: (
+        <span style={{ fontSize: '0.75rem' }}>
+          CALIFICACIÓN INDUSTRIAL
+        </span>
+      ),
+      image: '/servicios/calificacion.svg',
+      path: '/servicios/seremi/calificacion-industrial',
+    },
   ];
 
   return (
@@ -65,17 +112,28 @@ const ServiceModal = ({ isOpen, onClose }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {services.map((service, index) => {
               if (service.image) {
-                return (
-                  <Card key={index} className="border border-slateGray-200 shadow-md hover:shadow-xl transition-shadow duration-300 h-full">
+                const cardContent = (
+                  <Card className="border border-slateGray-200 shadow-md hover:shadow-xl transition-shadow duration-300 h-full cursor-pointer">
                     <div className="flex items-center justify-between p-4 h-full">
                       <CardTitle className="text-xl font-bold text-charcoal-700 pl-4">{service.title}</CardTitle>
                       <div className="relative w-20 h-20">
-                        <Image src={service.image} alt={service.title} layout="fill" objectFit="contain" />
+                        <Image src={service.image} alt={typeof service.title === 'string' ? service.title : 'Servicio'} layout="fill" objectFit="contain" />
                       </div>
                     </div>
                   </Card>
                 );
+
+                if (service.path) {
+                  return (
+                    <Link href={service.path} key={index}>
+                      {cardContent}
+                    </Link>
+                  );
+                }
+                return <div key={index}>{cardContent}</div>;
               }
+
+              // Fallback for services without an image
               return (
                 <Card key={index} className="border border-slateGray-200 shadow-md hover:shadow-xl transition-shadow duration-300 h-full">
                   <CardHeader>

@@ -204,8 +204,8 @@ export default function LandingPage() {
                 <h3 className="text-2xl font-bold text-charcoal-800">Nuestros Valores</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start">
-                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-robinEggBlue-100 flex items-center justify-center mr-4 mt-1">
-                      <Shield className="h-4 w-4 text-robinEggBlue-600" />
+                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-purple-100 flex items-center justify-center mr-4 mt-1">
+                      <Shield className="h-4 w-4 text-purple-600" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-charcoal-700">Integridad</h4>

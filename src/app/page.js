@@ -4,10 +4,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import Autoplay from "embla-carousel-autoplay";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { ArrowRight, Menu, X, Users, Shield, Award, Phone, Mail, Lightbulb, Landmark, FileText } from "lucide-react";
+import ContactForm from '@/components/ContactForm';
 import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/ui/fade-in";
@@ -406,36 +408,7 @@ export default function LandingPage() {
               </div>
 
               <div className="bg-white p-8 rounded-2xl shadow-lg">
-                <form className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-slateGray-700 mb-1">Nombre Completo</label>
-                      <Input id="name" type="text" className="w-full" placeholder="Tu nombre" />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-slateGray-700 mb-1">Correo Electrónico</label>
-                      <Input id="email" type="email" className="w-full" placeholder="tu@email.com" />
-                    </div>
-                  </div>
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-slateGray-700 mb-1">Asunto</label>
-                    <Input id="subject" type="text" className="w-full" placeholder="¿Cómo podemos ayudarte?" />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-slateGray-700 mb-1">Mensaje</label>
-                    <textarea
-                      id="message"
-                      rows={4}
-                      className="w-full px-3 py-2 border border-slateGray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-robinEggBlue-500 focus:border-robinEggBlue-500"
-                      placeholder="Cuéntanos más sobre tu proyecto"
-                    />
-                  </div>
-                  <div>
-                    <Button type="submit" className="w-full bg-robinEggBlue-300 hover:bg-robinEggBlue-400 transition-colors">
-                      Enviar Mensaje
-                    </Button>
-                  </div>
-                </form>
+                <ContactForm />
               </div>
             </div>
           </FadeIn>

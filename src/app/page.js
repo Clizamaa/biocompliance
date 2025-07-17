@@ -12,11 +12,13 @@ import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/ui/fade-in";
 import ServiceModal from '@/components/ui/ServiceModal';
+import MinsalModal from '@/components/ui/MinsalModal';
 
 
 
 export default function LandingPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMinsalModalOpen, setIsMinsalModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const plugin = useRef(
     Autoplay({ delay: 3000, stopOnInteraction: false })
@@ -87,11 +89,11 @@ export default function LandingPage() {
                   <Badge className="bg-robinEggBlue-300 text-white transition-colors">
                     Más de 10 años de experiencia
                   </Badge>
-                  <h1 className="text-4xl lg:text-6xl font-bold text-black-800 leading-tight">
+                  <h1 className="text-4xl lg:text-6xl font-bold text-slate-600 leading-tight">
                     Impulsa tu negocio con
                     <span className="text-charcoal-800"> asesoría experta</span>
                   </h1>
-                  <p className="text-xl text-gray-600 leading-relaxed">
+                  <p className="text-xl text-gray-800 leading-relaxed">
                     Ayudamos a empresas como la tuya a crecer, optimizar procesos y alcanzar sus objetivos estratégicos
                     con soluciones personalizadas y resultados comprobados.
                   </p>
@@ -179,7 +181,7 @@ export default function LandingPage() {
           <FadeIn>
             <div className="text-center mb-16">
               <Badge className="bg-verdigris-300 text-white mb-4">Sobre Nosotros</Badge>
-              <h2 className="text-3xl lg:text-4xl font-bold text-black-800 mb-4">Tu Socio Estratégico en Compliance</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-slate-500 mb-4">Tu Socio Estratégico en Compliance</h2>
               <p className="text-xl text-slateGray-600 max-w-3xl mx-auto">
                 En Bio Compliance, combinamos experiencia, innovación y un profundo conocimiento del sector para ofrecer soluciones que no solo cumplen con la normativa, sino que impulsan el crecimiento y la sostenibilidad de tu negocio.
               </p>
@@ -243,7 +245,7 @@ export default function LandingPage() {
           <FadeIn>
             <div className="text-center mb-16">
               <Badge className="bg-robinEggBlue-300 text-white mb-4">Nuestros Servicios</Badge>
-              <h2 className="text-3xl lg:text-4xl font-bold text-black-800 mb-4">Soluciones integrales para tu empresa</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-slate-500 mb-4">Soluciones integrales para tu empresa</h2>
               <p className="text-xl text-slateGray-600 max-w-3xl mx-auto">
                 Ofrecemos servicios especializados diseñados para impulsar el crecimiento y la eficiencia de tu negocio
               </p>
@@ -253,7 +255,7 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <FadeIn>
                 <Link href="/servicios/ley-karin">
-                  <Card className="border border-slateGray-200 shadow-lg h-full cursor-pointer hover:border-robinEggBlue-300 hover:shadow-xl transition-all duration-300">
+                  <Card className="border border-slate-200 shadow-lg h-full cursor-pointer hover:border-slate-300 hover:shadow-xl transition-all duration-300">
                     <CardHeader className="pb-2">
                       <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
                         <Users className="h-6 w-6 text-blue-600" />
@@ -269,7 +271,7 @@ export default function LandingPage() {
 
             <FadeIn>
                 <Card 
-                  className="border border-slateGray-200 shadow-lg h-full cursor-pointer hover:border-robinEggBlue-300 hover:shadow-xl transition-all duration-300"
+                  className="border border-slate-200 shadow-lg h-full cursor-pointer hover:border-slate-300 hover:shadow-xl transition-all duration-300"
                   onClick={() => setIsModalOpen(true)}
                 >
                   <CardHeader className="pb-2">
@@ -285,7 +287,10 @@ export default function LandingPage() {
             </FadeIn>
 
             <FadeIn>
-                <Card className="border border-slateGray-200 shadow-lg h-full">
+                <Card 
+                  className="border border-slate-200 shadow-lg h-full cursor-pointer hover:border-slate-300 hover:shadow-xl transition-all duration-300"
+                  onClick={() => setIsMinsalModalOpen(true)}
+                >
                   <CardHeader className="pb-2">
                     <div className="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
                       <Shield className="h-6 w-6 text-purple-600" />
@@ -293,13 +298,13 @@ export default function LandingPage() {
                     <CardTitle className="text-xl text-charcoal-800">Protocolos MINSAL</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-slateGray-600">lorem ipsun </p>
+                    <p className="text-slateGray-600">Implementación y seguimiento de protocolos ministeriales para la vigilancia de la salud de los trabajadores.</p>
                   </CardContent>
                 </Card>
             </FadeIn>
 
             <FadeIn>
-                <Card className="border border-slateGray-200 shadow-lg h-full">
+                <Card className="border border-slate-200 shadow-lg h-full">
                   <CardHeader className="pb-2">
                     <div className="h-12 w-12 rounded-full bg-orange-100 flex items-center justify-center mb-4">
                       <Lightbulb className="h-6 w-6 text-orange-600" />
@@ -313,7 +318,7 @@ export default function LandingPage() {
             </FadeIn>
 
             <FadeIn>
-                <Card className="border border-slateGray-200 shadow-lg h-full">
+                <Card className="border border-slate-200 shadow-lg h-full">
                   <CardHeader className="pb-2">
                     <div className="h-12 w-12 rounded-full bg-teal-100 flex items-center justify-center mb-4">
                       <Shield className="h-6 w-6 text-teal-600" />
@@ -327,7 +332,7 @@ export default function LandingPage() {
             </FadeIn>
 
             <FadeIn>
-                <Card className="border border-slateGray-200 shadow-lg h-full">
+                <Card className="border border-slate-200 shadow-lg h-full">
                   <CardHeader className="pb-2">
                     <div className="h-12 w-12 rounded-full bg-yellow-100 flex items-center justify-center mb-4">
                       <FileText className="h-6 w-6 text-yellow-600" />
@@ -349,7 +354,7 @@ export default function LandingPage() {
           <FadeIn>
             <div className="text-center mb-12">
               <Badge className="bg-robinEggBlue-300 text-white mb-4">Contáctanos</Badge>
-              <h2 className="text-3xl lg:text-4xl font-bold text-black-800 mb-4">¿Listo para llevar tu negocio al siguiente nivel?</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-slate-500 mb-4">¿Listo para llevar tu negocio al siguiente nivel?</h2>
               <p className="text-xl text-slateGray-600 max-w-3xl mx-auto">
                 Agenda una consulta gratuita y descubre cómo podemos ayudarte a alcanzar tus objetivos
               </p>
@@ -496,6 +501,7 @@ export default function LandingPage() {
       </Link>
 
       <ServiceModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <MinsalModal isOpen={isMinsalModalOpen} onClose={() => setIsMinsalModalOpen(false)} />
     </div>
   );
 }

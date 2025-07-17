@@ -113,7 +113,7 @@ const ServiceModal = ({ isOpen, onClose }) => {
             {services.map((service, index) => {
               if (service.image) {
                 const cardContent = (
-                  <Card className="border border-slateGray-200 shadow-md hover:shadow-xl transition-shadow duration-300 h-full cursor-pointer">
+                  <Card className="border border-slate-200 shadow-md hover:border-slate-300 hover:shadow-xl transition-shadow duration-300 h-full cursor-pointer">
                     <div className="flex items-center justify-between p-4 h-full">
                       <CardTitle className="text-xl font-bold text-charcoal-700 pl-4">{service.title}</CardTitle>
                       <div className="relative w-20 h-20">

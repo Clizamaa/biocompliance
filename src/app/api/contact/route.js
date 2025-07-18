@@ -12,7 +12,7 @@ export async function POST(request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'BioCompliance Contact <onboarding@resend.dev>',
+      from: 'BioCompliance Contact <contacto@bacchile.cl>',
       to: ['borisalonsocifuentesrib@gmail.com'], // Cambia esto a tu email de destino
       reply_to: email,
       subject: `${subject}`,

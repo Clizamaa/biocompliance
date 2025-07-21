@@ -14,6 +14,11 @@ export async function POST(request) {
         user: process.env.EMAIL_SERVER_USER,
         pass: process.env.EMAIL_SERVER_PASSWORD,
       },
+      tls: {
+        // Solución para el error "self-signed certificate in certificate chain"
+        // Esto es seguro para el desarrollo local.
+        rejectUnauthorized: false,
+      },
     });
 
     // Configura las opciones del correo

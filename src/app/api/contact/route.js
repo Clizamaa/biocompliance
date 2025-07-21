@@ -6,7 +6,7 @@ export async function POST(request) {
     const { name, email, subject, message } = await request.json();
 
     // Configura el transportador de Nodemailer
-    const transporter = nodemailer.createTransport({
+    const transporterOptions = {
       host: process.env.EMAIL_SERVER_HOST,
       port: process.env.EMAIL_SERVER_PORT,
       secure: true, // true para 465, false para otros puertos
@@ -14,12 +14,16 @@ export async function POST(request) {
         user: process.env.EMAIL_SERVER_USER,
         pass: process.env.EMAIL_SERVER_PASSWORD,
       },
-      tls: {
-        // Solución para el error "self-signed certificate in certificate chain"
-        // Esto es seguro para el desarrollo local.
+    };
+
+    // En desarrollo, permite certificados autofirmados. En producción, no.
+    if (process.env.NODE_ENV === 'development') {
+      transporterOptions.tls = {
         rejectUnauthorized: false,
-      },
-    });
+      };
+    }
+
+    const transporter = nodemailer.createTransport(transporterOptions);
 
     // Configura las opciones del correo
     const mailOptions = {

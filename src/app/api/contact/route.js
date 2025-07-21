@@ -1,21 +1,27 @@
 import { NextResponse } from 'next/server';
-import { Resend } from 'resend';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import nodemailer from 'nodemailer';
 
 export async function POST(request) {
   try {
     const { name, email, subject, message } = await request.json();
 
-    if (!name || !email || !subject || !message) {
-      return NextResponse.json({ error: 'Todos los campos son requeridos.' }, { status: 400 });
-    }
+    // Configura el transportador de Nodemailer
+    const transporter = nodemailer.createTransport({
+      host: process.env.EMAIL_SERVER_HOST,
+      port: process.env.EMAIL_SERVER_PORT,
+      secure: true, // true para 465, false para otros puertos
+      auth: {
+        user: process.env.EMAIL_SERVER_USER,
+        pass: process.env.EMAIL_SERVER_PASSWORD,
+      },
+    });
 
-    const { data, error } = await resend.emails.send({
-      from: 'contacto@bacchile.cl',
-      to: ['christian.lizamaa@redsalud.gob.cl'],
-      reply_to: email,
-      subject: `${subject}`,
+    // Configura las opciones del correo
+    const mailOptions = {
+      from: `"Formulario BioCompliance" <${process.env.EMAIL_SERVER_USER}>`,
+      to: process.env.EMAIL_TO, // El email que recibirá los mensajes
+      replyTo: email,
+      subject: `Nuevo mensaje: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
           <div style="max-width: 600px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px;">
@@ -30,14 +36,13 @@ export async function POST(request) {
           </div>
         </div>
       `,
-    });
+    };
 
-    if (error) {
-      console.error('Error sending email:', error);
-      return NextResponse.json({ error: 'Hubo un error al enviar el mensaje.' }, { status: 500 });
-    }
+    // Envía el correo
+    await transporter.sendMail(mailOptions);
 
     return NextResponse.json({ message: 'Mensaje enviado con éxito' }, { status: 200 });
+
   } catch (error) {
     console.error('API Error:', error);
     return NextResponse.json({ error: 'Error interno del servidor.' }, { status: 500 });

@@ -119,6 +119,11 @@ export default function LandingPage() {
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
+                  <Link href="#servicios">
+                    <Button size="lg" variant="outline" className="border-robinEggBlue-300 text-robinEggBlue-300 hover:bg-robinEggBlue-50 transition-colors">
+                      Servicios
+                    </Button>
+                  </Link>
                 </div>
 
                 <div className="flex items-center space-x-8 pt-4">
@@ -325,7 +330,7 @@ export default function LandingPage() {
                     <CardTitle className="text-xl text-charcoal-800">Confeccionamos tu RIOHS </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-slateGray-600">Confeccionamos tu Reglamento Interno de Higiene y Seguridad en 24hrs.</p>
+                    <p className="text-slateGray-600">Confeccionamos tu Reglamento Interno de Higiene y Seguridad.</p>
                   </CardContent>
                 </Card>
             </FadeIn>
@@ -345,17 +350,19 @@ export default function LandingPage() {
             </FadeIn>
 
             <FadeIn>
-                <Card className="border border-slate-200 shadow-lg h-full">
-                  <CardHeader className="pb-2">
-                    <div className="h-12 w-12 rounded-full bg-yellow-100 flex items-center justify-center mb-4">
-                      <FileText className="h-6 w-6 text-yellow-600" />
-                    </div>
-                    <CardTitle className="text-xl text-charcoal-800">Informes y Procedimientos</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-slateGray-600">lorem ipsun </p>
-                  </CardContent>
-                </Card>
+                <Link href="/servicios/informes-procedimientos">
+                  <Card className="border border-slate-200 shadow-lg h-full cursor-pointer hover:border-slate-300 hover:shadow-xl transition-all duration-300">
+                    <CardHeader className="pb-2">
+                      <div className="h-12 w-12 rounded-full bg-yellow-100 flex items-center justify-center mb-4">
+                        <FileText className="h-6 w-6 text-yellow-600" />
+                      </div>
+                      <CardTitle className="text-xl text-charcoal-800">Informes y Procedimientos</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-slateGray-600">Elaboración de informes técnicos y procedimientos especializados para el cumplimiento normativo.</p>
+                    </CardContent>
+                  </Card>
+                </Link>
             </FadeIn>
           </div>
         </div>
@@ -382,7 +389,7 @@ export default function LandingPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-medium text-black">Teléfono</h3>
-                    <p className="text-slateGray-600">+1 (123) 456-7890</p>
+                    <p className="text-slateGray-600">+56 9 5969 7543</p>
                   </div>
                 </div>
 

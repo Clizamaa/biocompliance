@@ -48,14 +48,7 @@ export default function VentanillaUnicaModal({ isOpen, onClose }) {
           </div>
         </div>
 
-        <div className="p-6 border-t border-slate-200 text-right">
-          <button 
-            onClick={onClose} 
-            className="py-2 px-4 bg-slateGray-200 text-charcoal-700 rounded-lg hover:bg-slateGray-300 transition-colors"
-          >
-            Cerrar
-          </button>
-        </div>
+
       </div>
     </div>
   );

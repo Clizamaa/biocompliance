@@ -68,13 +68,20 @@ export default function CalificacionIndustrialPage() {
             </div>
 
             <div className="mt-16 text-center">
-              <Button 
-                onClick={() => setIsModalOpen(true)}
-                className="bg-slateGray-600 hover:bg-slateGray-700 text-white transition-colors"
-              >
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Ver todos los servicios
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button 
+                  onClick={() => setIsModalOpen(true)}
+                  className="bg-slateGray-600 hover:bg-slateGray-700 text-white transition-colors"
+                >
+                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  Ver todos los servicios
+                </Button>
+                <Link href="/#contacto">
+                  <Button className="bg-robinEggBlue-300 hover:bg-robinEggBlue-400 text-white transition-colors">
+                    Solicitar Información
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </section>

@@ -5,15 +5,15 @@ import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import FadeIn from "@/components/ui/fade-in";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ShieldCheck, ClipboardList, AlertTriangle, FileText } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ShieldCheck, ClipboardList, AlertTriangle, FileText } from 'lucide-react';
 import Image from "next/image";
 import Link from "next/link";
 
 const leyKarinServices = [
-  { title: 'Protocolo de Prevención de Acoso Sexual, Laboral y Violencia en el Trabajo', icon: <ShieldCheck className="h-6 w-6 text-purple-600" /> },
-  { title: 'Procedimiento de investigaciones de acoso sexual, laboral y violencia laboral', icon: <ClipboardList className="h-6 w-6 text-purple-600" /> },
-  { title: 'Matriz de riesgos basada en la Ley 21.643', icon: <AlertTriangle className="h-6 w-6 text-purple-600" /> },
-  { title: 'Política Prevención de Violencia', icon: <FileText className="h-6 w-6 text-purple-600" /> },
+  { title: 'Protocolo de Prevención de Acoso Sexual, Laboral y Violencia en el Trabajo', icon: <ShieldCheck className="h-6 w-6 text-purple-600" />, href: '/servicios/ley-karin/protocolo-prevencion' },
+  { title: 'Procedimiento de investigaciones de acoso sexual, laboral y violencia laboral', icon: <ClipboardList className="h-6 w-6 text-purple-600" />, href: '/servicios/ley-karin/procedimiento-investigaciones' },
+  { title: 'Matriz de riesgos basada en la Ley 21.643', icon: <AlertTriangle className="h-6 w-6 text-purple-600" />, href: '/servicios/ley-karin/matriz-riesgos' },
+  { title: 'Política de Prevención sobre el Acoso Sexual, Laboral y Violencia en el trabajo', icon: <FileText className="h-6 w-6 text-purple-600" />, href: '/servicios/ley-karin/politica-prevencion' },
 ];
 
 export default function LeyKarinPage() {
@@ -51,22 +51,32 @@ export default function LeyKarinPage() {
               </div>
             
             <div className="flex justify-center">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
               {leyKarinServices.map((service, index) => (
                 <FadeIn key={index}>
-                  <Card className="border border-slateGray-200 shadow-lg h-full text-center max-w-lg mx-auto">
-                    <CardHeader className="pb-2">
-                      <div className="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mb-4 mx-auto">
-                        {service.icon}
-                      </div>
-                      <CardTitle className="text-xl text-charcoal-800">{service.title}</CardTitle>
-                    </CardHeader>
-                  </Card>
+                  <Link href={service.href}>
+                    <Card className="border border-slateGray-200 shadow-lg h-full text-center max-w-lg mx-auto hover:shadow-xl transition-shadow cursor-pointer">
+                      <CardHeader className="pb-2">
+                        <div className="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mb-4 mx-auto">
+                          {service.icon}
+                        </div>
+                        <CardTitle className="text-xl text-charcoal-800">{service.title}</CardTitle>
+                      </CardHeader>
+                    </Card>
+                  </Link>
                 </FadeIn>
               ))}
               </div>
             </div>
 
+            <div className="flex justify-center mt-12">
+              <Link href="/#servicios">
+                <Button size="lg" className="bg-robinEggBlue-300 hover:bg-robinEggBlue-400 transition-colors">
+                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  Volver a Servicios
+                </Button>
+              </Link>
+            </div>
 
           </div>
         </section>

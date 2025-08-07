@@ -6,7 +6,13 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
+    "start:cpanel": "node app.js",
+    "build:cpanel": "node build-for-cpanel.js",
     "lint": "next lint"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",

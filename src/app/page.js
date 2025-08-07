@@ -399,7 +399,7 @@ export default function LandingPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-medium text-black">Correo Electrónico</h3>
-                    <p className="text-slateGray-600">info@biocompliance.com</p>
+                    <p className="text-slateGray-600">contacto@biocompliance.cl</p>
                   </div>
                 </div>
 

@@ -40,17 +40,19 @@ export default function LandingPage() {
     <div id="home" className="min-h-screen bg-white">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/95 border-b border-text-charcoal-700">
-        <div className="container mx-auto px-4 lg:px-6 h-20 flex items-center justify-between relative">
-          <div className="flex items-center">
-            <Link href="#home" onClick={() => setIsMenuOpen(false)}>
-              <Image
-                src="/logo.png"
-                alt="Bio Compliance Logo"
-                width={192}
-                height={80}
-                className="h-20 w-auto cursor-pointer"
-              />
-            </Link>
+        <div className="w-full h-20 relative flex items-center">
+          <div className="container mx-auto px-4 lg:px-6 h-full flex items-center">
+            <div className="flex items-center">
+              <Link href="#home" onClick={() => setIsMenuOpen(false)}>
+                <Image
+                  src="/logo.png"
+                  alt="Bio Compliance Logo"
+                  width={192}
+                  height={80}
+                  className="h-20 w-auto cursor-pointer"
+                />
+              </Link>
+            </div>
           </div>
 
           <nav className="hidden md:flex items-center space-x-8 absolute left-1/2 -translate-x-1/2">
@@ -65,12 +67,30 @@ export default function LandingPage() {
             </Link>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <Button onClick={() => setIsMenuOpen(!isMenuOpen)} variant="ghost" size="icon">
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              <span className="sr-only">Abrir menú</span>
-            </Button>
+          <div className="absolute right-4 lg:right-6 flex items-center gap-4">
+            <Link href="/nextcloud">
+              <Button
+                variant="outline"
+                className="hidden md:flex items-center gap-2 text-[#0082c9] border-[#0082c9] font-semibold transition-colors"
+              >
+                <Image
+                  src="/nextcloud-logo.svg"
+                  alt="Nextcloud Logo"
+                  width={24}
+                  height={24}
+                  className="w-6 h-6"
+                />
+                Iniciar sesión
+              </Button>
+            </Link>
+
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
+              <Button onClick={() => setIsMenuOpen(!isMenuOpen)} variant="ghost" size="icon">
+                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                <span className="sr-only">Abrir menú</span>
+              </Button>
+            </div>
           </div>
         </div>
 
@@ -86,6 +106,21 @@ export default function LandingPage() {
               </Link>
               <Link href="#contacto" onClick={() => setIsMenuOpen(false)} className="text-charcoal-500 font-medium relative pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-robinEggBlue-300 after:transition-all after:duration-300 hover:after:w-full">
                 Contacto
+              </Link>
+              <Link href="/nextcloud" onClick={() => setIsMenuOpen(false)}>
+                <Button
+                  variant="outline"
+                  className="flex items-center gap-2 text-[#0082c9] border-[#0082c9] hover:bg-[#0082c9] hover:text-white font-semibold transition-colors"
+                >
+                  <Image
+                    src="/nextcloud-logo.svg"
+                    alt="Nextcloud Logo"
+                    width={24}
+                    height={24}
+                    className="w-6 h-6"
+                  />
+                  Iniciar sesión
+                </Button>
               </Link>
             </nav>
           </div>

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState, useRef } from 'react';
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
@@ -13,9 +13,9 @@ import ServiceModal from '@/components/ui/ServiceModal';
 // Dummy data for radiation services
 const radiationServices = [
   { title: 'Autorización de operación de equipos generadores de radiaciones ionizantes móviles', icon: <Radiation className="h-6 w-6 text-yellow-600" /> },
-  { title: 'Autorización de operación de instalaciones radiactivas y equipos de 2ª y 3ª categoría', icon: <Radiation className="h-6 w-6 text-yellow-600" /> },
-  { title: 'Autorización de operación de instalaciones radiactivas y equipos de 2ª y 3ª categoría', icon: <Radiation className="h-6 w-6 text-yellow-600" /> },
-  { title: 'Autorización de transporte y distribución de sustancias radiactivas de 2ª y 3ª categoría', icon: <Truck className="h-6 w-6 text-yellow-600" /> },
+  { title: 'Autorización de operación de instalaciones radiactivas y equipos de 2Âª y 3Âª categoría', icon: <Radiation className="h-6 w-6 text-yellow-600" /> },
+  { title: 'Autorización de operación de instalaciones radiactivas y equipos de 2Âª y 3Âª categoría', icon: <Radiation className="h-6 w-6 text-yellow-600" /> },
+  { title: 'Autorización de transporte y distribución de sustancias radiactivas de 2Âª y 3Âª categoría', icon: <Truck className="h-6 w-6 text-yellow-600" /> },
   { title: 'Autorización sanitaria para almacenamiento transitorio de sustancias radiactivas', icon: <Archive className="h-6 w-6 text-yellow-600" /> },
 ];
 
@@ -78,7 +78,7 @@ export default function RadiacionPage() {
                   className="bg-slateGray-600 hover:bg-slateGray-700 text-white transition-colors"
                 >
                   <ArrowLeft className="mr-2 h-4 w-4" />
-                  Ver todos los servicios
+                  Volver a Autorizaciones Sanitarias
                 </Button>
                 <Link href="/#contacto">
                   <Button className="bg-robinEggBlue-300 hover:bg-robinEggBlue-400 text-white transition-colors">
@@ -142,3 +142,6 @@ export default function RadiacionPage() {
     </div>
   );
 }
+
+
+

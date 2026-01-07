@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
@@ -73,7 +73,7 @@ export default function RuidoPrexorPage() {
                   className="bg-slateGray-600 hover:bg-slateGray-700 text-white transition-colors"
                 >
                   <ArrowLeft className="mr-2 h-4 w-4" />
-                  Ver todos los servicios
+                  Volver a Protocolos MINSAL
                 </Button>
                 <Link href="/#contacto">
                   <Button className="bg-robinEggBlue-300 hover:bg-robinEggBlue-400 text-white transition-colors">
@@ -135,3 +135,4 @@ export default function RuidoPrexorPage() {
     </div>
   );
 }
+

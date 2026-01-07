@@ -70,7 +70,7 @@ const ServiceModal = ({ isOpen, onClose }) => {
     },
 {
       title: 'RADIACION',
-      image: '/servicios/protocolos-minsal/radiacion-uv.png',
+      image: '/servicios/radiacion.svg',
       path: '/servicios/seremi/radiacion',
     },
     {

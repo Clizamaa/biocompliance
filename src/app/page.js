@@ -40,15 +40,15 @@ export default function LandingPage() {
     <div id="home" className="min-h-screen bg-white">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/95 border-b border-text-charcoal-700">
-        <div className="container mx-auto px-4 lg:px-6 h-16 flex items-center justify-between relative">
+        <div className="container mx-auto px-4 lg:px-6 h-20 flex items-center justify-between relative">
           <div className="flex items-center">
             <Link href="#home" onClick={() => setIsMenuOpen(false)}>
               <Image
                 src="/logo.png"
                 alt="Bio Compliance Logo"
-                width={160}
-                height={66}
-                className="h-16 w-auto cursor-pointer"
+                width={192}
+                height={80}
+                className="h-20 w-auto cursor-pointer"
               />
             </Link>
           </div>
@@ -128,7 +128,7 @@ export default function LandingPage() {
 
                 <div className="flex items-center space-x-8 pt-4">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-gray-900">500+</div>
+                    <div className="text-2xl font-bold text-gray-900">200+</div>
                     <div className="text-sm text-gray-600">Empresas asesoradas</div>
                   </div>
                   <div className="text-center">

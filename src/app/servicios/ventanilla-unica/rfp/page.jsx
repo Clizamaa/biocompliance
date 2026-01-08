@@ -1,11 +1,11 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, ShieldCheck, Menu, X } from 'lucide-react';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
 import FadeIn from '@/components/ui/fade-in';
 
@@ -107,7 +107,7 @@ export default function RfpPage() {
                 <Button asChild className="bg-slateGray-600 hover:bg-slateGray-700 text-white transition-colors">
                   <Link href="/?openModal=ventanilla">
                     <ArrowLeft className="mr-2 h-4 w-4" />
-                    Ver todos los servicios
+                    Volver a Ventanilla Única
                   </Link>
                 </Button>
                 <Link href="/#contacto">
@@ -131,3 +131,4 @@ export default function RfpPage() {
     </div>
   );
 }
+

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import Image from 'next/image';
@@ -107,7 +107,7 @@ export default function RilesPage() {
                 <Button asChild className="bg-slateGray-600 hover:bg-slateGray-700 text-white transition-colors">
                   <Link href="/?openModal=ventanilla">
                     <ArrowLeft className="mr-2 h-4 w-4" />
-                    Ver todos los servicios
+                    Volver a Ventanilla Única
                   </Link>
                 </Button>
                 <Link href="/#contacto">
@@ -131,3 +131,4 @@ export default function RilesPage() {
     </div>
   );
 }
+

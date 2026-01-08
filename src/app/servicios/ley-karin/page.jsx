@@ -11,7 +11,7 @@ import Link from "next/link";
 
 const leyKarinServices = [
   { title: 'Protocolo de Prevención de Acoso Sexual, Laboral y Violencia en el Trabajo', icon: <ShieldCheck className="h-6 w-6 text-purple-600" />, href: '/servicios/ley-karin/protocolo-prevencion' },
-  { title: 'Procedimiento de investigaciones de acoso sexual, laboral y violencia laboral', icon: <ClipboardList className="h-6 w-6 text-purple-600" />, href: '/servicios/ley-karin/procedimiento-investigaciones' },
+  { title: 'Canal de denuncias e Investigaciones', icon: <ClipboardList className="h-6 w-6 text-purple-600" />, href: '/servicios/ley-karin/procedimiento-investigaciones' },
   { title: 'Matriz de riesgos basada en la Ley 21.643', icon: <AlertTriangle className="h-6 w-6 text-purple-600" />, href: '/servicios/ley-karin/matriz-riesgos' },
   { title: 'Política de Prevención sobre el Acoso Sexual, Laboral y Violencia en el trabajo', icon: <FileText className="h-6 w-6 text-purple-600" />, href: '/servicios/ley-karin/politica-prevencion' },
 ];

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, ShieldCheck, Menu, X } from 'lucide-react';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
 import FadeIn from '@/components/ui/fade-in';
 

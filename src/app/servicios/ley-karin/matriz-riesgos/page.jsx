@@ -1,31 +1,75 @@
+'use client';
+
+import React, { useState } from 'react';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/ui/fade-in";
-import { ArrowLeft, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, AlertTriangle, Menu, X } from 'lucide-react';
 import Image from "next/image";
 import Link from "next/link";
 
 export default function MatrizRiesgosPage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center">
-              <Image
-                src="/logo.png"
-                alt="Bio Compliance Logo"
-                width={120}
-                height={40}
-                className="h-10 w-auto"
-              />
-            </div>
-            <div className="flex items-center space-x-4">
-              <Button className="hidden lg:inline-flex bg-robinEggBlue-300 hover:bg-robinEggBlue-400 text-white transition-colors">Contactanos</Button>
+      <header className="sticky top-0 z-50 bg-white shadow-md">
+        <div className="w-full h-20 relative flex items-center">
+          <div className="container mx-auto px-4 lg:px-6 h-full flex items-center justify-between">
+            <Link href="/" className="flex items-center space-x-2">
+              <Image src="/logo.png" alt="Bio Compliance Logo" width={140} height={35} />
+            </Link>
+
+            <nav className="hidden lg:flex items-center space-x-8 absolute left-1/2 -translate-x-1/2">
+              <Link href="/" className="text-charcoal-500 font-medium relative pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-robinEggBlue-300 after:transition-all after:duration-300 hover:after:w-full">
+                Inicio
+              </Link>
+              <Link href="/#nosotros" className="text-charcoal-500 font-medium relative pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-robinEggBlue-300 after:transition-all after:duration-300 hover:after:w-full">
+                Nosotros
+              </Link>
+              <Link href="/#servicios" className="text-charcoal-500 font-medium relative pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-robinEggBlue-300 after:transition-all after:duration-300 hover:after:w-full">
+                Servicio
+              </Link>
+              <Link href="/#contacto" className="text-charcoal-500 font-medium relative pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-robinEggBlue-300 after:transition-all after:duration-300 hover:after:w-full">
+                Contacto
+              </Link>
+            </nav>
+
+            <div className="flex items-center gap-4">
+              <Button asChild className="hidden lg:inline-flex bg-robinEggBlue-300 hover:bg-robinEggBlue-400 text-white transition-colors">
+                <Link href="/#contacto">Contactanos</Link>
+              </Button>
+              <button className="lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                <span className="sr-only">Abrir menú</span>
+                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
             </div>
           </div>
         </div>
+
+        {/* Mobile Menu Panel */}
+        {isMenuOpen && (
+          <div className="lg:hidden bg-white border-t border-gray-100 absolute w-full left-0">
+            <nav className="flex flex-col items-center space-y-4 py-4 shadow-lg">
+              <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-charcoal-500 font-medium">
+                Inicio
+              </Link>
+              <Link href="/#nosotros" onClick={() => setIsMenuOpen(false)} className="text-charcoal-500 font-medium">
+                Nosotros
+              </Link>
+              <Link href="/#servicios" onClick={() => setIsMenuOpen(false)} className="text-charcoal-500 font-medium">
+                Servicio
+              </Link>
+              <Link href="/#contacto" onClick={() => setIsMenuOpen(false)} className="text-charcoal-500 font-medium">
+                Contacto
+              </Link>
+              <Button asChild className="bg-robinEggBlue-300 hover:bg-robinEggBlue-400 text-white transition-colors w-full">
+                 <Link href="/#contacto" onClick={() => setIsMenuOpen(false)}>Contactanos</Link>
+              </Button>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Main Content */}
